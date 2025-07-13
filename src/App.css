@@ -31,13 +31,12 @@ button{
   font-size: 20px;
   border-radius: 20px;
   border: none;
-  /* MODIFIED: Updated background-color and box-shadow to match the screenshot */
   background-color: rgb(79, 224, 234);
   box-shadow: 2px 2px 50px rgb(79, 224, 234);
   cursor: pointer;
 }
 
-/* --- NEW STYLES FROM SCREENSHOTS --- */
+
 
 #speak{
   width: 100px;

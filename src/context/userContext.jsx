@@ -24,7 +24,7 @@ function UserContext({ children }) {
     window.speechSynthesis.speak(text_speak);
   }
   
-  // Updated function to handle more specific commands
+  
   function takeCommand(command) {
     if (command.includes("open") && command.includes("youtube")) {
       window.open("https://www.youtube.com/", "_blank");
@@ -53,7 +53,7 @@ function UserContext({ children }) {
         setSpeaking(false);
       }, 5000);
     }
-    // New command to get the current time
+   
     else if (command.includes("time")) {
       const time = new Date().toLocaleString(undefined, { hour: "numeric", minute: "numeric" });
       speak(time);
@@ -63,7 +63,6 @@ function UserContext({ children }) {
         setSpeaking(false);
       }, 5000);
     }
-    // New command to get the current date
     else if (command.includes("date")) {
       const date = new Date().toLocaleString(undefined, { day: "numeric", month: "short" });
       speak(date);
@@ -74,7 +73,6 @@ function UserContext({ children }) {
       }, 5000);
     }
     else {
-      // If no specific command is matched, send to the AI
       aiResponse(command);
     }
   }
@@ -84,7 +82,6 @@ function UserContext({ children }) {
     try {
       const text = await run(promptText);
 
-      // Your existing text manipulation logic
       const newText = text.split('*').join('').replace(/Google/gi, 'Barsha Mishra');
       
       setResult(newText);

@@ -11,7 +11,6 @@ import { CiMicrophoneOn } from "react-icons/ci";
 import { Datacontext } from './context/userContext';
 
 function App() {
-  // ADDED 'result' and 'startListening' from context
   const { speaking, prompt, response, result, startListening } = useContext(Datacontext);
 
   return (
@@ -19,8 +18,7 @@ function App() {
       <img src={va} alt="AVA" id="EVA" />
       <span>Hii I am AVA, YOUR Advanced Virtual Assistant</span>
 
-      {/* --- SOLUTION PART 1: RESULT DISPLAY --- */}
-      {/* This new container will hold the final response and will NOT disappear */}
+      
       <div className='result-container'>
         {result && <p className='result-text'>{result}</p>}
       </div>
@@ -35,7 +33,6 @@ function App() {
           <div className="response">
             {!response ? <img src={speakgif} alt="Listening..." id="speak" /> : <img src={aigif} alt="Speaking..." id="aigif" />}
             
-            {/* This prompt will now show "Listening..." or the user's transcript */}
             <p>{prompt}</p>
           </div>
         )}
